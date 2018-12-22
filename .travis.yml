@@ -5,11 +5,12 @@ node_js:
   - "10"
   - "11"
 jobs:
-  - stage: test
-    script: yarn run test
-  - stage: lint
-    script: yarn run lint
-  - stage: docs
-    script: yarn run docs
-  - stage: coverage
-    script: yarn run coverage
+  include:
+    - stage: test
+      script: yarn run test
+    - stage: lint
+      script: yarn run lint
+    - stage: docs
+      script: yarn run docs
+    - stage: coverage
+      script: yarn run coverage
