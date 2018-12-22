@@ -4,6 +4,7 @@
   "description": "Sane Node.js filesystem operations for TypeScript 📁",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
+  "files": ["dist/main.js", "dist/main.d.ts", "README.md", "LICENSE", "package.json"],
   "repository": "https://github.com/jwinnie/antipathy",
   "author": "Jeremy Potter",
   "license": "MIT",
