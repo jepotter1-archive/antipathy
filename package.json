@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Sane Node.js filesystem operations for TypeScript 📁",
   "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "repository": "https://github.com/jwinnie/antipathy",
   "author": "Jeremy Potter",
   "license": "MIT",

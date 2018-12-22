@@ -14,6 +14,7 @@ jobs:
     script: yarn run docs
   - stage: coverage
     script: yarn run coverage && yarn run coverage:report
+before_deploy: "yarn run build"
 deploy:
 - provider: npm
   email: npm@stormdesign.us
