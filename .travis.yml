@@ -1,16 +1,30 @@
 language: node_js
 node_js:
-  - "8"
-  - "9"
-  - "10"
-  - "11"
+- '8'
+- '9'
+- '10'
+- '11'
 jobs:
   include:
-    - stage: test
-      script: yarn run test
-    - stage: lint
-      script: yarn run lint
-    - stage: docs
-      script: yarn run docs
-    - stage: coverage
-      script: yarn run coverage
+  - stage: test
+    script: yarn run test
+  - stage: lint
+    script: yarn run lint
+  - stage: docs
+    script: yarn run docs
+  - stage: coverage
+    script: yarn run coverage
+deploy:
+  - provider: npm
+    email: npm@stormdesign.us
+    api_key:
+      secure: QXPdCU8iTNsN7Igw6/nVyY9gi2rFoTzOCLYmYFoqMafPBq0rG1LW/gLcmOlLPstPKHqGHTkWv/iVfQKw/IUaYbJaArnj8LnjVsRKWsLv9SXzZ6dGz5y30gLZHBvQFU02LdaWVpe+vebhIINcETvWoDzUyqgafxMcHzOeREgf9XbCaTsQNZhyFCX8kFAsLY9pDDt7+3Bn1pZLPEIL0dtATkcpL3tgtGlL5ZWTagLkJC5xphAAoN1i7buNiGTf85G4mX3vgi+bU6IjGy7mnVcWMi2g9O8XKjcEyvoT00eK16aFK6Qd+9pYaLmld9GnRUmbNuZ7oGMwRc6PglHWenAEnY9u48GUFS+cnaCcmxA42E6rehVGNSilPwzwTMo2r3+Kga7dA3YVqVMN7MEu2TKdzqz2GU1Jmcvtc75gMnRleiUraXqL6Ab0c+13v+VzYk3lDYgE88RCx4Rak7maA/q+XPm4cB0Q/PnXS12aYqyMRnIHhF3Mw+utZ9BnzsHoqSU55y6LsHNxwfrUoTExXwXCdjy6ek7wiKjXpefhTNasHu/shBxj0s+Kl9jChulkJUnecgaha5fHwEBhBDdRIJ3CxMnPfDgcXJFhxvytEOttQb8yabKgIr0p7UdUMjc+x0Lx84t7A2k8IFt/JQIfsPqJbuxkx7OXwYjJSzIX7eYcn40=
+    on:
+      tags: true
+      repo: jwinnie/antipathy
+  - provider: surge
+    project: ./docs/
+    domain: antipathy.surge.sh
+    on:
+      tags: true
+      repo: jwinnie/antipathy
