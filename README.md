@@ -1,6 +1,8 @@
 
 # antipathy
-[![TypeScript](https://badges.frapsoft.com/typescript/love/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://travis-ci.org/jwinnie/antipathy.svg?branch=master)](https://travis-ci.org/jwinnie/antipathy)
+[![Coverage Status](https://coveralls.io/repos/github/jwinnie/antipathy/badge.svg?branch=master)](https://coveralls.io/github/jwinnie/antipathy?branch=master)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 Welcome to sane Node.js filesystem paths, inspired by Python's [pathlib](https://docs.python.org/3/library/pathlib.html).
 

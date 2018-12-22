@@ -6,3 +6,6 @@ node_modules
 
 # Compiled Code
 dist
+
+# Test Coverage
+coverage

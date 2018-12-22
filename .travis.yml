@@ -13,7 +13,7 @@ jobs:
   - stage: docs
     script: yarn run docs
   - stage: coverage
-    script: yarn run coverage
+    script: yarn run coverage && yarn run coverage:report
 deploy:
   - provider: npm
     email: npm@stormdesign.us
