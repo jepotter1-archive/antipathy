@@ -17,7 +17,6 @@ p.getRelative("/etc") // => apt.d
 See `src/main.spec.ts` for more examples.
 
 ## Features
-- 100% test coverage
 - 0 dependencies (can even run on the browser!)
-- Written in TypeScript
+- Written in TypeScript with complete type coverage
 - Advanced path resolution algorithms for maximum safety
