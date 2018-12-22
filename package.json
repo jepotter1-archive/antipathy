@@ -1,0 +1,28 @@
+{
+  "name": "antipathy",
+  "version": "1.0.0",
+  "description": "Sane Node.js filesystem operations for TypeScript 📁",
+  "main": "dist/main.js",
+  "repository": "https://github.com/jwinnie/antipathy",
+  "author": "Jeremy Potter",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.12",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "tslint-clean-code": "^0.2.9",
+    "tslint-config-standard": "^8.0.1",
+    "typedoc": "^0.13.0",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' --project tsconfig.json",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "docs": "typedoc --out docs/ src/main.ts"
+  }
+}
