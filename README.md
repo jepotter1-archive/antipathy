@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/jwinnie/antipathy/badge.svg?branch=master)](https://coveralls.io/github/jwinnie/antipathy?branch=master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Welcome to sane Node.js filesystem paths, inspired by Python's [pathlib](https://docs.python.org/3/library/pathlib.html).
+Welcome to sane Node.js filesystem paths, inspired by Python's [pathlib](https://docs.python.org/3/library/pathlib.html)
 
 ## Example
 ```typescript
@@ -15,6 +15,9 @@ p.getAbsolute()       // => /etc/apt.d
 p.getRelative("/etc") // => apt.d
 ```
 See `src/main.spec.ts` for more examples.
+
+## Documentation
+[Go to documentation](antipathy.surge.sh)
 
 ## Features
 - 0 dependencies (can even run on the browser!)
