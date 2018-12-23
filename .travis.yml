@@ -15,6 +15,7 @@ deploy:
   on:
     tags: true
     repo: jwinnie/antipathy
+    node: "10"
 - provider: surge
   project: "./docs/"
   domain: antipathy.surge.sh
@@ -22,3 +23,4 @@ deploy:
   on:
     tags: true
     repo: jwinnie/antipathy
+    node: "10"
