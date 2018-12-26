@@ -18,9 +18,13 @@ test("absolute -> absolute", () => {
     expect(absolutePath.getAbsolute()).toBe("/hello/world")
 })
 test("push relative path", () => {
+    const p = new Path("/hello/world").push("foo").push("ya")
+    expect([p.getAbsolute(), p.getRelative("/hello")]).toEqual(["/hello/world/foo/ya", "world/foo/ya"])
+})
+test("mutable push relative path", () => {
     const p = new Path("/hello/world")
-    p.push("foo")
-    p.push("ya/")
+    p.$push("foo")
+    p.$push("ya")
     expect([p.getAbsolute(), p.getRelative("/hello")]).toEqual(["/hello/world/foo/ya", "world/foo/ya"])
 })
 test("pop", () => {
@@ -34,8 +38,11 @@ test("absolute relative to self", () => {
 
 // Tests that should error
 test("push absolute path (error)", () => {
+    expect(() => new Path("/hello/world").push("/bar/")).toThrowError(PathError)
+})
+test("mutable push absolute path (error)", () => {
     const p = new Path("/hello/world")
-    expect(() => p.push("/bar/")).toThrowError(PathError)
+    expect(() => p.$push("/bar/")).toThrowError(PathError)
 })
 test("relative relative to relative (error)", () => {
     expect(() => relativePath.getRelative("hello/world")).toThrowError(PathError)

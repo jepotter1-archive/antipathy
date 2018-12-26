@@ -22,9 +22,10 @@ export class PathError extends Error {
 }
 
 export class Path {
-    private abs: boolean
-    private path: string[]
-    constructor (path: string) {
+    private abs!: boolean
+    private path!: string[]
+    constructor (path?: string) {
+        if (path === undefined) return
         if (isAbs(path)) {
             this.abs = true
         } else {
@@ -32,14 +33,31 @@ export class Path {
         }
         this.path = getPathTokens(path)
     }
-    push (path: string): void {
+    push (path: string): Path {
+        if (isAbs(path)) {
+            throw new PathError("Cannot push absolute path to Path object")
+        } else {
+            const p = new Path()
+            p.path = [...this.path, ...getPathTokens(path)]
+            p.abs = this.abs
+            return p
+        }
+    }
+    pop (): Path {
+        const p = new Path()
+        p.path = this.path
+        p.abs = this.abs
+        p.$pop()
+        return p
+    }
+    $push (path: string): void {
         if (isAbs(path)) {
             throw new PathError("Cannot push absolute path to Path object")
         } else {
             this.path.push(...getPathTokens(path))
         }
     }
-    pop (): void {
+    $pop (): void {
         this.path.pop()
     }
     getAbsolute (relativeTo: string = process.cwd()): string {
