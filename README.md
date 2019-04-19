@@ -5,6 +5,7 @@
 [![Build Status](https://travis-ci.org/jwinnie/antipathy.svg?branch=master)](https://travis-ci.org/jwinnie/antipathy)
 [![Coverage Status](https://coveralls.io/repos/github/jwinnie/antipathy/badge.svg?branch=master)](https://coveralls.io/github/jwinnie/antipathy?branch=master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 The Node.js `fs` and `path` APIs are needlessly complicated and crude. Antipathy is Node.js filesystem manipulation for humans. Inspired by Python's [pathlib](https://docs.python.org/3/library/pathlib.html).
 - [Documentation](https://antipathy.surge.sh)
